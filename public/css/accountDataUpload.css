@@ -1,6 +1,23 @@
 main {
-    border: 1px solid black;
-    height: 90vh;
+    min-height: 90vh;
+}
+
+form textarea {
+    height: 50px;
+    margin-bottom: 50px;
+}
+form textarea:focus, form textarea:active {
+    height: 100px;
+}
+form textarea::placeholder {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    transition: .5s ease;
+}
+
+form textarea:focus::placeholder, form textarea:active::placeholder{
+    top: 10px;
 }
 .upload {
     width: 100px;
@@ -36,3 +53,107 @@ main {
 input[type=file]::-webkit-file-upload-button {
     cursor: pointer;
 }
+
+form h3 {
+    text-align: center;
+    color: brown;
+}
+
+/* form select {
+    border: 2px solid brown ;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    outline: none;
+} */
+
+/* form select:focus , form select:active {
+    
+} */
+
+/* form select option {
+    padding: 5px 0;
+    background: red;
+} */
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+label span {
+    display: flex;
+    align-items: center;
+}
+
+
+.form-control  {
+    /* font-family: system-ui, sans-serif; */
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    /* background: brown; */
+  }
+
+
+  .form-control + .form-control {
+    margin-top: 1em;
+  }
+  
+  .form-control:focus-within {
+    color: var(--form-control-color);
+  }
+  
+  input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+  
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+  
+  input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+
+
+  .bxl-twitter,.bxl-facebook-square, .bx-phone {
+    font-size: 20px;
+    color: brown;
+  }

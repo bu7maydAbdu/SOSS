@@ -13,6 +13,8 @@ require("dotenv").config({ path: "./config/.env" });
 
 const mainRoute = require("./routes/main");
 const lostsRoute = require("./routes/losts");
+const profileRoute = require("./routes/profile");
+
 const connectDB = require("./config/database");
 
 require("./config/passport")(passport);
@@ -49,6 +51,7 @@ app.use(flash());
 
 app.use("/", mainRoute);
 app.use("/losts", lostsRoute);
+app.use("/profile", profileRoute);
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`server is running on port ${PORT}`);
