@@ -1,7 +1,8 @@
 const express = require("express");
 const PORT = 8000;
 const app = express();
-const mongoose = "mongoose";
+const mongoose = require("mongoose");
+const passport = require("passport");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
