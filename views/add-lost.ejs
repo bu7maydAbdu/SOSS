@@ -1,0 +1,39 @@
+<%- include('partials/header') -%>
+
+<header>
+    <h1>SOSS</h1>
+
+
+    <a href="/loginPage">
+        <button>Login</button>
+    </a>
+</header>
+
+
+
+
+<main>
+<h2>إضافة مفقود <br>
+  Add Lost Person </h2>
+    <form action="/losts/addLost"  enctype="multipart/form-data" method="POST">
+        <input class="lost-name" name="lostName" id="lostName" type="text" placeholder="Lost person name...اسم المفقود">
+    
+    
+    
+            <textarea name="LostInfo" id="lostInfo" placeholder="Lost person informations...اكتب معلومات عن المفقود"></textarea>
+            <section>
+                <input type="file" class="form-control" id="imageUpload" name="file" size="100">
+                <button>post</button>
+            </section>
+      
+    </form>
+
+</main>
+
+
+
+
+
+
+
+<%- include('partials/footer') -%>
