@@ -13,11 +13,45 @@
       
       href="/imgs/favicon-32x32.png"
     />
-      <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/add-lost.css" />
+    <link rel="stylesheet" href="/css/login.css" />
   </head>
   <body>
+<header>
+    <h1>SOSS</h1>
 
+    <a href="/signUpPage">
+        <button>SignUp</button>
+    </a>
+
+   
+</header>
+
+
+<main>
+    <h2>تسجيل دخول <br>
+              LogIn</h2>
+
+    <form action="">
+        <input type="email" placeholder="Your Email ... البريد الإلكتروني">
+        <input type="password" placeholder="Your Password ... كلمة المرور ">
+
+        <section class="login-toggletosihnup">
+            <button>Login</button>
+            <a href="/signup">go to SignUp Page</a>
+
+        </section>
+    
+    </form>
+
+</main>
+
+
+
+
+
+
+
+
+<%- include('partials/footer') -%>

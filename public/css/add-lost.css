@@ -59,7 +59,7 @@ form .lost-name::placeholder, form textarea::placeholder {
 
 form textarea:focus , form .lost-name:focus {
     /* border: 2px solid brown; */
-    box-shadow: 0 3px 5px brown;
+    box-shadow: 0 8px 5px rgba(165, 42, 42, 0.765);
 
 }
 

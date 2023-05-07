@@ -1,0 +1,50 @@
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+form input[type=text], form input[type=email], form input[type=password] {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 50px;
+    border: none;
+    border-bottom: 2px solid brown;
+    padding: 0 5%;
+    outline: none;
+}
+
+form button {
+    height: 40px;
+    border-radius: 10px;
+    background: brown;
+    font-size: 20px;
+    width: 100px;
+    color: white;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+}
+
+
+.login-toggletosihnup{
+    width: fit-content;
+    margin:  0 auto;
+}
+
+.login-toggletosihnup a {
+    text-decoration: none;
+    color: brown;
+    border-bottom:1px solid brown;
+}
