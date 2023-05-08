@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HayaFooty</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/imgs/favicon-32x32.png"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/add-lost.css" />
+    <link rel="stylesheet" href="/css/lost-post.css">
+  </head>
+  <body></body>
+</html>
+
+
+<header>
+    <h1>SOSS</h1>
+
+    <% if(userData){ %>
+      <section class="myprofile-forward">
+        <section class="small-profile-pic">
+          <img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt="">
+        </section>
+        <!-- <a href="/profile">
+          <%= userData.userName %>
+       </a> -->
+      </section>
+   
+      
+    <% } else{ %>
+    <a href="/login">
+        <button>Login</button>
+    </a>
+    <% } %>
+</header>
+
+<main>
+    <section class="post-image-section">
+        <img src="<%= lostPost.image %>" alt="">
+    </section>
+    <section class="post-info">
+        <section class="post--name">
+            <h2><%= lostPost.lostPersonName %></h2>
+
+        </section>
+<section class="content">
+    <section class="postedby-section">
+        <section class="postedby--profilepic">
+            <img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt="">
+        </section>
+        <h3><%= lostPost.userName %></h3>
+    </section>
+    <hr>
+    <% if(lostPost.status === true){ %>
+        <section class="status-section">
+        <span>Status: found</span>
+        <!-- <i class='bx bx-check-circle'></i> -->
+        <i class='bx bxs-check-shield'></i>
+        <span>الحالة: تم الإيجاد</span>
+        </section>
+   <%    }else{  %>
+    <section class="status-section">
+      <span>Status: not found</span>
+      <!-- <i class='bx bx-x-circle' ></i> -->
+      <i class='bx bxs-shield-x' ></i>
+      <span>الحالة: لم يتم الإيجاد</span>
+  </section>
+  <% } %>
+  <hr>
+    <p><%= lostPost.lostPersonInfo %></p>
+</section>
+       
+    </section>
+</main>
+
+
+
+
+
+
+<%- include('partials/footer') -%>

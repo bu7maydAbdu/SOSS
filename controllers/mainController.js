@@ -5,8 +5,8 @@ module.exports = {
   getHome: async (req, res) => {
     try {
       const lostPeople = await Lost.find();
-      console.log(lostPeople[0].postedBy.toString());
-      console.log(req.user.id);
+      // console.log(lostPeople[0].postedBy.toString());
+      // console.log(req.user.id);
 
       // console.log(typeof req.user.id, typeof lostPeople[0].postedBy);
       // console.log(req.user.id === lostPeople[0].postedBy ? "true" : "false");

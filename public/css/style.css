@@ -12,10 +12,11 @@ body {
 }
 
 header {
-    /* position: fixed;
+    /* position: fixed; */
+    position: relative;
     top: 0;
     left: 0;
-    max-width: 100vw;
+    /* max-width: 100vw;
     min-width: 100vw; */
     display: flex;
     justify-content: space-between;
@@ -25,6 +26,7 @@ header {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.332);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
 }
 
 header h1 {
@@ -165,13 +167,13 @@ font-size: 20px;
 z-index: 1;
 color: rgb(113, 110, 110);
 text-decoration: none;
-animation: expand .25s linear ;
+animation: expand .15s linear ;
 }
 
 @keyframes expand {
     0%   {
-        width: 0%;
-        height: 0%;
+        width: 25%;
+        height: 25%;
         background: rgba(245, 245, 245, 0.269);
 
     }

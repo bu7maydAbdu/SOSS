@@ -1,0 +1,40 @@
+<%- include('partials/header') -%>
+
+<header>
+    <h1>SOSS</h1>
+
+
+    <a href="/login">
+        <button>Login</button>
+    </a>
+</header>
+
+
+
+
+<main>
+<h2>تعديل المنشور <br>
+  Edit Your Post </h2>
+  <form action="/losts/editLostPost/<%= postToEdit._id %>"  enctype="multipart/form-data" method="POST">
+    <input value="<%= postToEdit.lostPersonName %>" class="lost-name" name="lostName" id="lostName" type="text" placeholder="Lost person name...اسم المفقود">
+
+
+
+
+        <textarea name="LostInfo" id="lostInfo" placeholder="Lost person informations...اكتب معلومات عن المفقود"><%= postToEdit.lostPersonInfo %></textarea>
+        <section>
+            <input   type="file" class="form-control" id="imageUpload" name="file" size="100">
+                <button>Edit</button>
+            </section>
+      
+    </form>
+
+</main>
+
+
+
+
+
+
+
+<%- include('partials/footer') -%>

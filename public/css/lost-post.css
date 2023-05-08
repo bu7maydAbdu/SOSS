@@ -1,0 +1,98 @@
+ * , *::before , *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+main {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    height: 89.9vh;
+    /* border: 1px solid black; */
+}
+
+.post-image-section {
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 100%;
+    /* background: red; */
+}
+
+.post-image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-info{
+    /* border: 1px solid black; */
+    height: 100%;
+    /* width: 800px; */
+    width: 50%;
+}
+
+.post-info hr {
+    margin-bottom: 20px;
+}
+
+.post--name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: brown; */
+    background: whitesmoke;
+    /* color: white; */
+    padding: 10px 0;
+    color: rgb(113, 110, 110);
+/* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.701); */
+margin-bottom: 10px;
+}
+
+.post--name h2 {
+    color: rgb(113, 110, 110);
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.content {
+    /* border: 1px solid black; */
+    padding: 0 2%;
+}
+.postedby-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    /* border: 1px solid black; */
+    margin-bottom: 50px;
+}
+
+.postedby--profilepic {
+    /* border: 1px solid black; */
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.postedby--profilepic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.bxs-check-shield, .bxs-shield-x {
+    font-size: 50px;
+}
+
+.status-section {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+}

@@ -28,4 +28,47 @@ module.exports = {
       console.log(err);
     }
   },
+  getLostEditPage: async (req, res) => {
+    try {
+      // console.log(req.params);
+      const postToEdit = await Lost.findById({ _id: req.params.id }).lean();
+
+      // console.log(postToEdit);
+      res.render("editLostPost.ejs", {
+        postToEdit: postToEdit,
+        userData: req.user,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  editLostPost: async (req, res) => {
+    try {
+      console.log(req.body);
+      const filter = { _id: req.params._id };
+      const update = {
+        lostPersonName: req.body.lostName,
+        lostPersonInfo: req.body.LostInfo,
+      };
+
+      await Lost.findOneAndUpdate(filter, update, {
+        new: true,
+        upsert: true,
+        // Return the raw result from the MongoDB driver
+      });
+
+      res.redirect("/");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getLostPost: async (req, res) => {
+    try {
+      const lostPost = await Lost.findById({ _id: req.params.id }).lean();
+      console.log(lostPost);
+      res.render("lost-post.ejs", { lostPost: lostPost, userData: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };

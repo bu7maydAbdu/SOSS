@@ -10,6 +10,10 @@ router.post("/login", authController.postLogin);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.get("/logout", authController.logout);
-router.get("/accountDataUpload", mainController.getAccountDataUpload);
+router.get(
+  "/accountDataUpload",
+  ensureAuth,
+  mainController.getAccountDataUpload
+);
 
 module.exports = router;

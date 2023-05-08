@@ -88,7 +88,7 @@ module.exports = {
     if (req.user) {
       return res.redirect("/logout"); // recommended path to   /profile
     }
-    res.render("signup.ejs", {
+    res.render("register.ejs", {
       title: "Create Account",
     });
   },
@@ -106,7 +106,7 @@ module.exports = {
 
     if (validationErrors.length) {
       req.flash("errors", validationErrors);
-      return res.redirect("../accountDataUpload"); //../signup
+      return res.redirect("../signup"); //../accountDataUpload
     }
     req.body.email = validator.normalizeEmail(req.body.email, {
       gmail_remove_dots: false,
@@ -133,7 +133,7 @@ module.exports = {
         if (err) {
           return next(err);
         }
-        res.redirect("/"); // recommended path to    /profile
+        res.redirect("/accountDataUpload"); // recommended path to    /profile
       });
     } catch (err) {
       return next(err);
