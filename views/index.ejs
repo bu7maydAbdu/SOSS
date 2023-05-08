@@ -3,10 +3,22 @@
 <header>
     <h1>SOSS</h1>
 
-
+    <% if(userData){ %>
+      <section class="myprofile-forward">
+        <section class="small-profile-pic">
+          <img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt="">
+        </section>
+        <!-- <a href="/profile">
+          <%= userData.userName %>
+       </a> -->
+      </section>
+   
+      
+    <% } else{ %>
     <a href="/login">
         <button>Login</button>
     </a>
+    <% } %>
 </header>
 
 
@@ -30,148 +42,45 @@
 <h2>المفقودين <br> Lost People </h2>
 <section class="persons">
 
+<% for(let i = 0 ; i < lostPeople.length ; i++){ %>
 
 
         <section class=" person-card">
-            <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
+          <i class='bx bxs-info-circle' ></i>
+          <% if(userData.id === lostPeople[i].postedBy.toString()) {%>
+            <i class='bx bx-dots-vertical-rounded' ></i>
+
+            <% } %>
+            <img src="<%= lostPeople[i].image %>" alt="">
             <section class="card-info">
-                <h3>someone name </h3>
+                <h3><%= lostPeople[i].lostPersonName%></h3>
+                   <% if(lostPeople[i].status === true){ %>
+                    <section class="status-section">
+                    <span>Status: found</span>
+                    <!-- <i class='bx bx-check-circle'></i> -->
+                    <i class='bx bxs-check-shield'></i>
+                    <span>الحالة: تم الإيجاد</span>
+                    </section>
+               <%    }else{  %>
                 <section class="status-section">
-                  <span>Status: found</span>
-                  <span>الحالة: تم الإيجاد</span>
-                </section>
-                <span>Posted by: user1 </span>
+                  <span>Status: not found</span>
+                  <!-- <i class='bx bx-x-circle' ></i> -->
+                  <i class='bx bxs-shield-x' ></i>
+                  <span>الحالة: لم يتم الإيجاد</span>
+              </section>
+              <% } %>
+                  
+                <span class="postedby">  <section><img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt=""></section> <%= lostPeople[i].userName %> </span>
              </section>
         </section>
-        <section class=" person-card">
-          <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-          <section class="card-info">
-              <h3>someone name </h3>
-              <section class="status-section">
-                <span>Status: found</span>
-                <span>الحالة: تم الإيجاد</span>
-              </section>
-              <span>Posted by: user1 </span>
-           </section>
-      </section>
-      <section class=" person-card">
-        <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-        <section class="card-info">
-            <h3>someone name </h3>
-            <section class="status-section">
-              <span>Status: found</span>
-              <span>الحالة: تم الإيجاد</span>
-            </section>
-            <span>Posted by: user1 </span>
-         </section>
-    </section>
-    <section class=" person-card">
-      <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-      <section class="card-info">
-          <h3>someone name </h3>
-          <section class="status-section">
-            <span>Status: found</span>
-            <span>الحالة: تم الإيجاد</span>
-          </section>
-          <span>Posted by: user1 </span>
-       </section>
-  </section>
-  <section class=" person-card">
-    <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-    <section class="card-info">
-        <h3>someone name </h3>
-        <section class="status-section">
-          <span>Status: found</span>
-          <span>الحالة: تم الإيجاد</span>
-        </section>
-        <span>Posted by: user1 </span>
-     </section>
-</section>
-<section class=" person-card">
-  <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-  <section class="card-info">
-      <h3>someone name </h3>
-      <section class="status-section">
-        <span>Status: found</span>
-        <span>الحالة: تم الإيجاد</span>
-      </section>
-      <span>Posted by: user1 </span>
-   </section>
-</section>
-<section class=" person-card">
-  <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-  <section class="card-info">
-      <h3>someone name </h3>
-      <section class="status-section">
-        <span>Status: found</span>
-        <span>الحالة: تم الإيجاد</span>
-      </section>
-      <span>Posted by: user1 </span>
-   </section>
-</section>
-<section class=" person-card">
-  <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-  <section class="card-info">
-      <h3>someone name </h3>
-      <section class="status-section">
-        <span>Status: found</span>
-        <span>الحالة: تم الإيجاد</span>
-      </section>
-      <span>Posted by: user1 </span>
-   </section>
-</section>
-<section class=" person-card">
-  <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-  <section class="card-info">
-      <h3>someone name </h3>
-      <section class="status-section">
-        <span>Status: found</span>
-        <span>الحالة: تم الإيجاد</span>
-      </section>
-      <span>Posted by: user1 </span>
-   </section>
-</section>
-<section class=" person-card">
-  <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
-  <section class="card-info">
-      <h3>someone name </h3>
-      <section class="status-section">
-        <span>Status: found</span>
-        <span>الحالة: تم الإيجاد</span>
-      </section>
-      <span>Posted by: user1 </span>
-   </section>
-</section>
+      
+      <% } %>
 
 </section>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('.swiper', {
-      slidesPerView: 3,
-      direction: getDirection(),
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      on: {
-        resize: function () {
-          swiper.changeDirection(getDirection());
-        },
-      },
-    });
-
-    function getDirection() {
-      var windowWidth = window.innerWidth;
-      var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
-
-      return direction;
-    }
-  </script>
 
 
 <%- include('partials/footer') -%>

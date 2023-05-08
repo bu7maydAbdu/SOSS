@@ -27,10 +27,6 @@ const lostSchema = new mongoose.Schema({
   cloudinaryId: {
     type: String,
   },
-  promotes: {
-    type: Number,
-    required: true,
-  },
 });
 
 module.exports = mongoose.model("Lost", lostSchema);

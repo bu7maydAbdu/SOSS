@@ -15,9 +15,10 @@ module.exports = {
 
       await Lost.create({
         lostPersonName: req.body.lostName,
-        postText: req.body.LostInfo,
-        postedBy: 43653464534444444444444444444, //req.user._id,
-        userName: "admin", //req.user.userName,
+        lostPersonInfo: req.body.LostInfo,
+        postedBy: req.user._id,
+        status: false,
+        userName: req.user.userName,
         image: result.secure_url,
         cloudinaryId: result.public_id,
       });
