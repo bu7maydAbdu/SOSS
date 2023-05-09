@@ -145,18 +145,113 @@ h2 {
     border-radius: 10px;
     /* color: white; */
 }
+
+
+.person-card-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+position: absolute;
+top: 0;
+right:0 ;
+width: 100%;
+height: 100%;
+background: whitesmoke;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
+font-size: 20px;
+z-index: 1;
+color: rgb(113, 110, 110);
+text-decoration: none;
+animation: expand .25s linear ;
+}
+
+@keyframes expand {
+    0%   {
+        width: 0%;
+        height: 0%;
+    }
+ 
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+  }
+
+.person-card-option.display-none{
+ display: none;
+}
+
+
+
+
+
+.person-card-option a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    /* border: 1px solid black; */
+    letter-spacing: 2px;
+    width: 80%;
+    /* color: rgb(152, 152, 152); */
+color: rgb(113, 110, 110);
+    /* background: rgb(159, 159, 159); */
+    padding: 10px 0;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701) ; */
+    border-radius: 10px;
+}
+
+.person-card-option a:focus,.person-card-option a:active {
+    text-decoration: none;
+    color: rgb(113, 110, 110);
+}
+
+.person-card-option a + a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid brown;
+    width: 80%;
+    border-radius: 10px;
+    padding: 10px 0;
+    color: white;
+    color: brown;
+    /* background: rgb(233, 62, 0); */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701); */
+    /* letter-spacing: 2px; */
+    transition: .5s ease;
+}
+
+.person-card-option a + a:hover {
+    background: brown;
+    color: white;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
+}
+
+.bx-x {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+    color: rgb(113, 110, 110);
+}
+
 .bx-dots-vertical-rounded {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 5px;
+    right: 5px;
     font-size: 30px;
     color: white;
+    cursor: pointer;
 }
 
 .bxs-info-circle {
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 5px;
+    top: 5px;
     font-size: 30px;
     /* color: white; */
     /* color: rgb(113, 110, 110); */
@@ -164,10 +259,12 @@ h2 {
    /* background: grey; */
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
    border-radius: 50%;
+   cursor: pointer;
 }
 .person-card h3 {
     /* background: brown; */
-    /* color: white; */
+    color: brown;
+    padding: 10px 0;
     /* color: brown; */
 }
 
@@ -185,6 +282,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     /* font-weight: bold; */
+    /* padding: 0 2%; */
     margin: 5px 0;
 }
 

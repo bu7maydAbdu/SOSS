@@ -28,3 +28,25 @@
 //     }
 //   }, 500);
 // }, 3000);
+const optionsBtn = document.querySelectorAll(".bx-dots-vertical-rounded");
+const closeOptionsBtn = document.querySelectorAll(".bx-x");
+const personCardOption = document.querySelectorAll(".person-card-option");
+
+for (let i = 0; i < optionsBtn.length; i++) {
+  optionsBtn[i].addEventListener("click", openOptions);
+  function openOptions() {
+    personCardOption[i].classList.toggle("display-none");
+  }
+}
+
+// closeOptionsBtn.addEventListener("click", closeOptions);
+
+// function closeOptions() {
+//   personCardOption.classList.toggle("display-none");
+// }
+for (let i = 0; i < closeOptionsBtn.length; i++) {
+  closeOptionsBtn[i].addEventListener("click", openOptions);
+  function openOptions() {
+    personCardOption[i].classList.toggle("display-none");
+  }
+}
