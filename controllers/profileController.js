@@ -2,6 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const AccountData = require("../models/AccountData");
 
 module.exports = {
+  getMyProfile: async (req, res) => {},
   addAccountData: async (req, res) => {
     try {
       console.log(req.body);

@@ -1,0 +1,31 @@
+<%- include('partials/header') -%>
+
+<header>
+    <h1>SOSS</h1>
+
+    <% if(userData){ %>
+      <section class="myprofile-forward">
+        <section class="small-profile-pic">
+          <img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt="">
+        </section>
+        <!-- <a href="/profile">
+          <%= userData.userName %>
+       </a> -->
+      </section>
+   
+      
+    <% } else{ %>
+    <a href="/login">
+        <button>Login</button>
+    </a>
+    <% } %>
+</header>
+
+
+  <h1>profile</h1>
+
+
+
+
+
+<%- include('partials/footer') -%>
