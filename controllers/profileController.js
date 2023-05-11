@@ -33,7 +33,7 @@ module.exports = {
         });
       }
 
-      res.redirect("/accountDataUpload");
+      res.redirect("/");
     } catch (err) {
       console.log(err);
     }
