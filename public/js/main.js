@@ -28,38 +28,20 @@
 //     }
 //   }, 500);
 // }, 3000);
-const optionsBtn = document.querySelectorAll(".bx-dots-vertical-rounded");
-const closeOptionsBtn = document.querySelectorAll(".bx-x");
-const personCardOption = document.querySelectorAll(".person-card-option");
+const optionsBtn = document.querySelector(".bx-dots-vertical-rounded");
+const closeOptionsBtn = document.querySelector(".bx-x");
+const personCardOption = document.querySelector(".person-card-option");
 
-for (let i = 0; i < optionsBtn.length; i++) {
-  optionsBtn[i].addEventListener("click", openOptions);
-  function openOptions() {
-    personCardOption[i].classList.toggle("display-none");
-  }
+optionsBtn.addEventListener("click", openOptions);
+function openOptions() {
+  personCardOption.classList.toggle("display-none");
 }
 
-// closeOptionsBtn.addEventListener("click", closeOptions);
+closeOptionsBtn.addEventListener("click", closeOptions);
 
-// function closeOptions() {
-//   personCardOption.classList.toggle("display-none");
+// for (let i = 0; i < closeOptionsBtn.length; i++) {
+closeOptionsBtn.addEventListener("click", closeOptions);
+function closeOptions() {
+  personCardOption.classList.toggle("display-none");
+}
 // }
-for (let i = 0; i < closeOptionsBtn.length; i++) {
-  closeOptionsBtn[i].addEventListener("click", openOptions);
-  function openOptions() {
-    personCardOption[i].classList.toggle("display-none");
-  }
-}
-
-let uploadButton = document.getElementById("imageUpload");
-let chosenImage = document.getElementById("chosenppic");
-
-uploadButton.onchange = () => {
-  let reader = new FileReader();
-  reader.readAsDataURL(uploadButton.files[0]);
-
-  console.log(uploadButton.files[0]);
-  reader.onload = () => {
-    chosenImage.setAttribute("src", reader.result);
-  };
-};

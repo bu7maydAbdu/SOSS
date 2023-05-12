@@ -1,4 +1,24 @@
-<%- include('partials/header') -%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HayaFooty</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+
+      
+      href="/imgs/favicon-32x32.png"
+    />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+  </head>
+  <body>
 
 <header>
     <h1>SOSS</h1>
@@ -21,8 +41,33 @@
     <% } %>
 </header>
 
+<section class="profile-header">
+  <section class="profile-pic-container">
+    <img class="profile-pic" src="<%= accountData.profilePic %>" alt="">
 
-  <h1>profile</h1>
+  </section>
+  <section class="profile-intro-section">
+    <h2><%= myProfileData.userName %></h2>
+    <h3><%= accountData.profession %></h3>
+
+      <a href=""><span><i class='bx bxl-twitter' ></i>Twitter</a>
+      <a href=""><span><i class='bx bxl-facebook-square'></i>Facebook</a>
+
+  </section>
+</section>
+<main>
+  <section class="bio">
+    <p><%= accountData.bio %></p>
+  </section>
+  <section class="posts">
+    <h3>Your Posts</h3>
+
+   
+
+  </section>
+</main>
+
+
 
 
 

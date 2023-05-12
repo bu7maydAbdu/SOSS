@@ -4,14 +4,14 @@
     <h1>SOSS</h1>
 
     <% if(userData){ %>
-      <section class="myprofile-forward">
+      <a href="/profile/myProfile/<%= userData._id %>" class="myprofile-forward">
         <section class="small-profile-pic">
-          <img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt="">
+          <img src="<%= accountData.profilePic %>" alt="">
         </section>
         <!-- <a href="/profile">
           <%= userData.userName %>
        </a> -->
-      </section>
+      </a>
    
       
     <% } else{ %>
@@ -56,13 +56,7 @@
             <i class='bx bx-x' ></i>
 
           </section>
-          <% if(userData){ %>
-            <% if(userData.id === lostPeople[i].postedBy.toString()) {%>
-              <i class='bx bx-dots-vertical-rounded' ></i>
-  
-              <% } %>
-         <% } %>
-          
+     
             <img src="<%= lostPeople[i].image %>" alt="">
             <section class="card-info">
                 <h3><%= lostPeople[i].lostPersonName%></h3>

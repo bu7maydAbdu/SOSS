@@ -60,6 +60,14 @@ margin-bottom: 10px;
     /* border: 1px solid black; */
     padding: 0 2%;
 }
+
+.postedby-container {
+    position: relative;
+}
+
+.postedby-container i {
+    color: grey;
+}
 .postedby-section {
     display: flex;
     flex-direction: column;

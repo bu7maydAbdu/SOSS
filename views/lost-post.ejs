@@ -61,12 +61,27 @@
 
         </section>
 <section class="content">
+  <section class="postedby-container">
+    
     <section class="postedby-section">
+      <i class='bx bx-dots-vertical-rounded' ></i>
+
+      <section class="person-card-option display-none">
+
+        <a href="/losts/editLostPostPage/<%= lostPost.id %>"><i class='bx bxs-edit-alt' ></i>Edit تعديل</a>
+        <a href=""><i class='bx bx-trash' ></i>Delete حذف</a>
+
+        <i class='bx bx-x' ></i>
+
+      </section>
+
         <section class="postedby--profilepic">
             <img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt="">
         </section>
         <h3><%= lostPost.userName %></h3>
     </section>
+    
+  </section>
     <hr>
     <% if(lostPost.status === true){ %>
         <section class="status-section">
