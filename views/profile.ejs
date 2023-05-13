@@ -42,96 +42,42 @@
 </header>
 <main>
 
-  <aside>
-    <ul>
-      <li><i class="fa-solid fa-house"></i><span class="sidenavbtn--txt">Home</span></li>
-      <li><i class="fa-solid fa-address-card"></i><span class="sidenavbtn--txt">Add Post</span></li>
-      <li><i class="fa-solid fa-gear"></i><span class="sidenavbtn--txt">Settings</span></li>
-    </ul>
-  </aside>
 
-<section class="profile-header">
-  <section class="profile-pic-container">
-    <img class="profile-pic" src="<%= accountData.profilePic %>" alt="">
-
-  </section>
-  <section class="profile-intro-section">
-    <section class="profile-header--header">
+  <section class="profile-header">
+   
+    <section class="profile-intro-section">
+      
+      <section class="profile-header--header">
+        <section class="profile-pic-container">
+          <img class="profile-pic" src="<%= accountData.profilePic %>" alt="">
+      
+        </section>
+  
+      </section>
+      <hr>
+  
       <h2><%= myProfileData.userName %></h2>
 
-    </section>
-    <hr>
-          
-    <section class="profile-info">
       <h3><%= accountData.profession %></h3>
-
-      <a href=""><i class='bx bxl-twitter' ></i><%= accountData.twitter %></a>
-        <a href=""><i class='bx bxl-facebook-square'></i><%= accountData.facebook %></a>
-          <a  href=""><i class='bx bx-phone' ></i><%= accountData.phonenumber %></a>
-    </section>
-     
-
-  </section>
-</section>
-<section class="profile-main">
-  <section class="bio">
-    <h4>Bio:</h4>
-    <p><%= accountData.bio %></p>
-  </section>
-  <section class="posts">
-    <section class="section-title">
-      <h3>Your Posts:</h3>
-<h3>:مشوراتك</h3>
-    </section>
-
-    <% for(let i = 0 ; i < myProfileLostPost.length ; i++){ %>
-
-
-      <section class=" person-card">
-        <a href="/losts/lostPost/<%= myProfileLostPost[i]._id %>"><i class='bx bxs-info-circle' ></i></a>
-        <section class="person-card-option display-none">
-
-          <a href="/losts/editLostPostPage/<%= myProfileLostPost[i].id %>"><i class='bx bxs-edit-alt' ></i>Edit تعديل</a>
-          <a href=""><i class='bx bx-trash' ></i>Delete حذف</a>
-
-          <i class='bx bx-x' ></i>
-
-        </section>
-        <% if(userData){ %>
-          <% if(userData.id === myProfileLostPost[i].postedBy.toString()) {%>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-
-            <% } %>
-       <% } %>
-        
-          <img src="<%= myProfileLostPost[i].image %>" alt="">
-          <section class="card-info">
-              <h3><%= myProfileLostPost[i].lostPersonName%></h3>
-                 <% if(myProfileLostPost[i].status === true){ %>
-                  <section class="status-section">
-                  <span>Status: found</span>
-                  <!-- <i class='bx bx-check-circle'></i> -->
-                  <i class='bx bxs-check-shield'></i>
-                  <span>الحالة: تم الإيجاد</span>
-                  </section>
-             <%    }else{  %>
-              <section class="status-section">
-                <span>Status: not found</span>
-                <!-- <i class='bx bx-x-circle' ></i> -->
-                <i class='bx bxs-shield-x' ></i>
-                <span>الحالة: لم يتم الإيجاد</span>
-            </section>
-            <% } %>
-                
-              <span class="postedby">  <section><img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt=""></section> <%= myProfileLostPost[i].userName %> </span>
-           </section>
+      <section class="profile-info">
+        <h3><%= accountData.profession %></h3>
+  
+        <a href=""><i class='bx bxl-twitter' ></i><%= accountData.twitter %></a>
+          <a href=""><i class='bx bxl-facebook-square'></i><%= accountData.facebook %></a>
+            <a  href=""><i class='bx bx-phone' ></i><%= accountData.phonenumber %></a>
       </section>
-    
-    <% } %>
+  
+    </section>
+   
+  </section>
+
+
+  <section class="profile-main">
 
   </section>
-</section>
 
+
+  
 
 
 </main>
