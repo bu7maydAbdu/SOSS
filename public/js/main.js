@@ -45,3 +45,14 @@ function closeOptions() {
   personCardOption.classList.toggle("display-none");
 }
 // }
+
+const aside = document.querySelector("aside");
+
+aside.addEventListener("mouseover", displaytxt);
+
+function displaytxt() {
+  const sidenavtxt = document.querySelectorAll(".sidenavbtn--txt");
+  for (let i = 0; i < sidenavtxt.length; i++) {
+    sidenavtxt[i].style.display = "block";
+  }
+}
