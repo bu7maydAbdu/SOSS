@@ -31,7 +31,7 @@ main {
     align-items: center;
     justify-content: space-between;
     border: 1px solid black;
-    height: 89vh;
+    height: 92vh;
     padding: 0 10%;
 }
 
@@ -184,12 +184,15 @@ border-radius: 10px 0 10px 0;
 }
 
 .posts {
-    display: grid;
+    display:flex;
+    /* display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; */
     /* padding: 20px; */
-    width: 60%; /* 500px */
-    /* border: 1px solid black; */
+    width: 96%; /* 500px */
+    border: 1px solid black;
+    height: fit-content;
+    margin: 0 auto;
 }
 
 .section-title {

@@ -120,25 +120,17 @@ h2 {
     row-gap: 50px;
 }
 
-.carousel-container {
-    background: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    /* grid-template-columns: repeat(8, 1fr); */
-    align-items: center;
-    width: 200%;
-    height: 100%;
-}
 
 
 
 .person-card {
     position: relative;
+    /* width: 350px; */
     width: 350px;
     margin:  0 auto;
-    height: 100%;
+    /* height: 100%; */
+    height: 300px;
+    height: 350px;
     /* border: 1px solid black; */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
     /* background: linen; */
@@ -279,6 +271,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
     /* object-fit: cover; */
     padding: 0 2%;
     color: rgb(113, 110, 110);
+    height: fit-content;
 }
 
 
@@ -293,7 +286,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
 
 .person-card img {
     width: 100%;
-    height: 450px;
+    /* height: 450px; */
     border-radius: 10px 10px 0 0;
     object-fit: cover ;
 }

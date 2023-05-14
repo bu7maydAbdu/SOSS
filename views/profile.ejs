@@ -74,6 +74,53 @@
 
   <section class="profile-main">
 
+    <section class="posts">
+      <% for(let i = 0 ; i < myProfileLostPost.length ; i++){ %>
+
+
+        <section class=" person-card">
+          <a href="/losts/lostPost/<%= myProfileLostPost[i]._id %>"><i class='bx bxs-info-circle' ></i></a>
+          <section class="person-card-option display-none">
+  
+            <a href="/losts/editLostPostPage/<%= myProfileLostPost[i].id %>"><i class='bx bxs-edit-alt' ></i>Edit تعديل</a>
+            <a href=""><i class='bx bx-trash' ></i>Delete حذف</a>
+  
+            <i class='bx bx-x' ></i>
+  
+          </section>
+          <% if(userData){ %>
+            <% if(userData.id === myProfileLostPost[i].postedBy.toString()) {%>
+              <i class='bx bx-dots-vertical-rounded' ></i>
+  
+              <% } %>
+         <% } %>
+  
+            <img src="<%= myProfileLostPost[i].image %>" alt="">
+            <section class="card-info">
+                <h3><%= myProfileLostPost[i].lostPersonName%></h3>
+                   <% if(myProfileLostPost[i].status === true){ %>
+                    <section class="status-section">
+                    <span>Status: found</span>
+                    <!-- <i class='bx bx-check-circle'></i> -->
+                    <i class='bx bxs-check-shield'></i>
+                    <span>الحالة: تم الإيجاد</span>
+                    </section>
+               <%    }else{  %>
+                <section class="status-section">
+                  <span>Status: not found</span>
+                  <!-- <i class='bx bx-x-circle' ></i> -->
+                  <i class='bx bxs-shield-x' ></i>
+                  <span>الحالة: لم يتم الإيجاد</span>
+              </section>
+              <% } %>
+  
+                <span class="postedby">  <section><img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt=""></section> <%= myProfileLostPost[i].userName %> </span>
+             </section>
+        </section>
+  
+      <% } %>
+    </section>
+
   </section>
 
 
