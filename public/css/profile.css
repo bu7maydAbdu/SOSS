@@ -19,9 +19,9 @@
     /* margin-top: 10px; 50 */
     margin-bottom: 10px; /*50px */
     border-radius: 10px;
-/* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701); */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
 /* height: 500px; */
-border: 3px dotted brown;
+/* border: 3px dotted brown; */
 margin-right: 100px;
 
 }
@@ -145,11 +145,12 @@ border-radius: 50%;
 } 
 
 .profile-main {
+    flex-direction: column;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* padding: 0 25%; */
     border: 3px dotted brown;
-    width: 1000px;
+    width: 60vw;
     margin: 0 auto;
     /* background: whitesmoke; */
     /* padding: 20px 0; */
@@ -188,11 +189,26 @@ border-radius: 10px 0 10px 0;
     /* display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr; */
-    /* padding: 20px; */
-    width: 96%; /* 500px */
-    border: 1px solid black;
+    padding: 10px 0;
+    max-width: 96%; /*500px*/
+    /* border: 1px solid black; */
     height: fit-content;
     margin: 0 auto;
+/* border: 3px dotted brown; */
+border-top: 1px solid brown;
+border-bottom: 1px solid brown;
+
+/* border-radius: 10px; */
+margin-bottom: 20px;
+overflow-x: auto;
+}
+
+.posts-scroller {
+    display: flex;
+}
+
+.posts .person-card{
+    margin: 0 20px;
 }
 
 .section-title {
@@ -219,3 +235,9 @@ border-radius: 10px 0 10px 0;
     text-decoration: none;
     font-size: 16px;
 }
+
+/* hr {
+    height: 2px ;
+    background: black;
+    width: 50px;
+} */
