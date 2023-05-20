@@ -3,22 +3,22 @@
 <header>
     <h1>SOSS</h1>
 
-    <% if(userData){ %>
-      <a href="/profile/myProfile/<%= userData._id %>" class="myprofile-forward">
-        <section class="small-profile-pic">
-          <img src="<%= accountData.profilePic %>" alt="">
-        </section>
-        <!-- <a href="/profile">
-          <%= userData.userName %>
-       </a> -->
-      </a>
-   
+    <% if(userData === "false" && accountData === "false"){ %>
       
-    <% } else{ %>
-    <a href="/login">
+      <a href="/login">
         <button>Login</button>
-    </a>
-    <% } %>
+      </a>
+      
+      <% } else{ %>
+        <a href="/profile/myProfile/<%= userData._id %>" class="myprofile-forward">
+          <section class="small-profile-pic">
+            <img src="<%= accountData.profilePic %>" alt="">
+          </section>
+          <!-- <a href="/profile">
+            <%= userData.userName %>
+         </a> -->
+        </a>
+        <% } %>
 </header>
 
 
