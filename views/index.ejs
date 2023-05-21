@@ -48,15 +48,6 @@
 
         <section class=" person-card">
           <a href="/losts/lostPost/<%= lostPeople[i]._id %>"><i class='bx bxs-info-circle' ></i></a>
-          <section class="person-card-option display-none">
-
-            <a href="/losts/editLostPostPage/<%= lostPeople[i].id %>"><i class='bx bxs-edit-alt' ></i>Edit تعديل</a>
-            <a href=""><i class='bx bx-trash' ></i>Delete حذف</a>
-
-            <i class='bx bx-x' ></i>
-
-          </section>
-     
             <img src="<%= lostPeople[i].image %>" alt="">
             <section class="card-info">
                 <h3><%= lostPeople[i].lostPersonName%></h3>

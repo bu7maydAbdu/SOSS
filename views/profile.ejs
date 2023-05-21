@@ -56,12 +56,10 @@
       </section>
       <!-- <hr> -->
   
-      <h2><%= myProfileData.userName %></h2>
+      <h3><%= myProfileData.userName %></h3>
 
-      <h3><%= accountData.profession %></h3>
-      <section class="profile-info">
-        <h3><%= accountData.profession %></h3>
-  
+      <h4><%= accountData.profession %></h4>
+      <section class="profile-info">  
         <a href=""><i class='bx bxl-twitter' ></i><%= accountData.twitter %></a>
           <a href=""><i class='bx bxl-facebook-square'></i><%= accountData.facebook %></a>
             <a  href=""><i class='bx bx-phone' ></i><%= accountData.phonenumber %></a>
@@ -81,20 +79,8 @@
 
         <section class=" person-card">
           <a href="/losts/lostPost/<%= myProfileLostPost[i]._id %>"><i class='bx bxs-info-circle' ></i></a>
-          <section class="person-card-option display-none">
-  
-            <a href="/losts/editLostPostPage/<%= myProfileLostPost[i].id %>"><i class='bx bxs-edit-alt' ></i>Edit تعديل</a>
-            <a href=""><i class='bx bx-trash' ></i>Delete حذف</a>
-  
-            <i class='bx bx-x' ></i>
-  
-          </section>
-          <% if(userData){ %>
-            <% if(userData.id === myProfileLostPost[i].postedBy.toString()) {%>
-              <i class='bx bx-dots-vertical-rounded' ></i>
-  
-              <% } %>
-         <% } %>
+         
+         
   
             <img src="<%= myProfileLostPost[i].image %>" alt="">
             <section class="card-info">
