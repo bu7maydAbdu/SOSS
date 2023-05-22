@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/signup.css" />
   </head>
   <body>
 <header>
@@ -33,10 +34,14 @@
         SignUp</h2>
 
     <form action="/signup" method="POST">
-        <input type="text" class="form-control" id="userName" name="userName" placeholder="Username ... إسم المستخدم ">
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Your Email ... البريد الإلكتروني">
-        <input type="password" class="form-control" id="password" name="password" placeholder="Your Password ... كلمة المرور ">
-        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="confirm password ... أعد كتابة كلمة المرور">
+      <label for="userName"><span>Username:</span><span>:إسم المستخدم</span></label>
+        <input type="text" class="form-control" id="userName" name="userName" required>
+      <label for="exampleInputEmail1"><span>Email:</span><span>:بريدك الإلكتروني</span></label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"  required>
+      <label for="password"><span>password:</span><span>:كلمة المرور</span></label>
+        <input type="password" class="form-control" id="password" name="password"  required>
+      <label for="confirmPassword"><span>confirm password:</span><span>:أعد كتابة كلمة المرور</span></label>
+        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"  required>
         <section class="login-toggletosihnup">
             <button type="submit" class="btn btn-primary loginpageBtn">Sign Up</button>
             <a href="/login">go to Login Page</a>

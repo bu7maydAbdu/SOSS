@@ -20,29 +20,11 @@
   </head>
   <body>
 
-<header>
-    <h1>SOSS</h1>
 
-    <% if(userData){ %>
-      <section class="myprofile-forward">
-        <section class="small-profile-pic">
-          <img src="https://res.cloudinary.com/moabdu/image/upload/v1683557734/kakkbx6ykylflyaj6nqg.jpg" alt="">
-        </section>
-        <!-- <a href="/profile">
-          <%= userData.userName %>
-       </a> -->
-      </section>
-   
-      
-    <% } else{ %>
-    <a href="/login">
-        <button>Login</button>
-    </a>
-    <% } %>
-</header>
 <main>
 
-
+<section class="profile-header-container">
+  
   <section class="profile-header">
    
     <section class="profile-intro-section">
@@ -53,22 +35,44 @@
       
         </section>
   
+        <h3><%= myProfileData.userName %></h3>
+        <h4><%= accountData.profession %></h4>
       </section>
       <!-- <hr> -->
   
-      <h3><%= myProfileData.userName %></h3>
 
-      <h4><%= accountData.profession %></h4>
       <section class="profile-info">  
-        <a href=""><i class='bx bxl-twitter' ></i><%= accountData.twitter %></a>
-          <a href=""><i class='bx bxl-facebook-square'></i><%= accountData.facebook %></a>
-            <a  href=""><i class='bx bx-phone' ></i><%= accountData.phonenumber %></a>
+
+        <% if(accountData.twitter !== "" ){ %>
+        
+          <a href="<%= accountData.twitter %>"><i class='bx bxl-twitter' ></i></a>
+        <% } %>
+
+        <% if(accountData.facebook !== ""){ %>
+
+          <a href="<%= accountData.facebook %>"><i class='bx bxl-facebook-square'></i></a>
+       <% }  %>
+
+       <% if(accountData.phoneNumber !== ""){ %>
+
+        <a  href=""><i class='bx bx-phone' ></i><%= accountData.phoneNumber %></a>
+      <% } %>
       </section>
   
     </section>
+
+    <ul>
+      <a href="/"><li><i class="fa-solid fa-house"></i><span>Home</span></li></a>
+      <hr>
+      <a href="/losts/addLostPage"><li><i class="fa-solid fa-person-circle-question"></i><span>Add Lost person</span></li></a> 
+      <hr>
+      <a href="/profile/settings/:id"><li><i class="fa-solid fa-screwdriver-wrench"></i><span>Settings</span></li></a>
+    </ul>
    
   </section>
+</section>
 
+<section class="profile-main-container">
 
   <section class="profile-main">
 
@@ -110,6 +114,7 @@
   </section>
 <!-- <hr> -->
   </section>
+</section>
 
 
   
