@@ -23,7 +23,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/add-lost.css" />
+    <!-- <link rel="stylesheet" href="/css/add-lost.css" /> -->
     <link rel="stylesheet" href="/css/lost-post.css">
   </head>
   <body></body>
@@ -69,7 +69,16 @@
       <section class="person-card-option display-none">
 
         <a href="/losts/editLostPostPage/<%= lostPost._id %>"><i class='bx bxs-edit-alt' ></i>Edit تعديل</a>
-        <a href=""><i class='bx bx-trash' ></i>Delete حذف</a>
+        <!-- <a class="deletebtn" href=""><i class='bx bx-trash' ></i>Delete حذف</a> -->
+
+        <form
+                    action="/losts/deleteLost/<%= lostPost._id %>?_method=DELETE"
+                    method="POST"
+                    class="deletebtn"
+                  >
+                 
+                    <button  type="submit" value="Delete"><i class='bx bx-trash' ></i>Delete حذف</button>
+                  </form>
 
         <i class='bx bx-x' ></i>
 

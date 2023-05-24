@@ -12,7 +12,6 @@ module.exports = {
       console.log(req.file);
       const result = await cloudinary.uploader.upload(req.file.path);
       // const profile = await ProfileInfo.findOne({ user: req.user._id });
-
       await Lost.create({
         lostPersonName: req.body.lostName,
         lostPersonInfo: req.body.LostInfo,
@@ -23,7 +22,7 @@ module.exports = {
         cloudinaryId: result.public_id,
       });
 
-      res.redirect("/losts/addLostPage");
+      res.redirect("/"); // /losts/addLostPage
     } catch (err) {
       console.log(err);
     }
@@ -68,6 +67,22 @@ module.exports = {
       console.log(lostPost);
       res.render("lost-post.ejs", { lostPost: lostPost, userData: req.user });
     } catch (err) {
+      console.log(err);
+    }
+  },
+  deleteLost: async (req, res) => {
+    try {
+      let lost = await Lost.findById({ _id: req.params.id });
+
+      if (lost.image) {
+        await cloudinary.uploader.destroy(lost.cloudinaryId);
+      }
+
+      await Lost.deleteOne({ _id: req.params.id });
+      console.log("Deleted Lost");
+      res.redirect("/");
+    } catch (err) {
+      // res.redirect("/");
       console.log(err);
     }
   },

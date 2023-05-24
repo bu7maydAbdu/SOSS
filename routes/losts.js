@@ -13,5 +13,6 @@ router.post(
   lostsController.editLostPost
 );
 router.get("/lostPost/:id", lostsController.getLostPost);
+router.delete("/deleteLost/:id", lostsController.deleteLost);
 
 module.exports = router;

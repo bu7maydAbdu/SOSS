@@ -1,8 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&family=Bree+Serif&family=Bungee+Spice&family=Faster+One&family=Kaushan+Script&family=Libre+Barcode+39+Text&family=Lobster&family=Merienda:wght@400;500;600;700&family=Mitr:wght@400;600;700&family=Modak&family=Montserrat+Subrayada:wght@700&family=Mulish:wght@400;700&family=Nabla&family=Parisienne&family=Passion+One&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&family=Press+Start+2P&family=Prosto+One&family=Righteous&family=Roboto&family=Russo+One&family=Source+Code+Pro:wght@500;700&display=swap');
  * , *::before , *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
  }
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Alexandria', sans-serif;
+}
+
+header {
+    /* position: fixed; */
+    position: relative;
+    top: 0;
+    left: 0;
+    /* max-width: 100vw;
+    min-width: 100vw; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    background: rgba(15, 1, 1, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.332);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+header h1 {
+    color: brown;
+}
+
+header a button {
+    height: 45px;
+    width: 80px;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid brown;
+    border-radius: 16px;
+    color: brown;
+    font-weight: bold;
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+header a button:hover {
+    background: brown;
+    color: white;
+
+}
+
+.myprofile-forward{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+
+.small-profile-pic{
+    /* border: 1px solid black; */
+    height: 50px ;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.small-profile-pic img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 10px;
+}
+
+.myprofile-forward a {
+    align-self: flex-end;
+    color: brown;
+    text-decoration: none;
+}
 main {
     display: flex !important;
     align-items: center;
@@ -103,4 +180,150 @@ margin-bottom: 10px;
     align-items: center;
     /* border: 1px solid black; */
     margin-bottom: 20px;
+}
+
+
+
+.person-card-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+position: absolute;
+top: 0;
+right:0 ;
+width: 100%;
+height: 100%;
+background: whitesmoke;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
+font-size: 20px;
+z-index: 1;
+color: rgb(113, 110, 110);
+text-decoration: none;
+animation: expand .15s linear ;
+}
+
+@keyframes expand {
+    0%   {
+        width: 25%;
+        height: 25%;
+        background: rgba(245, 245, 245, 0.269);
+
+    }
+ 
+    100% {
+        width: 100%;
+        height: 100%;
+        background: rgba(245, 245, 245, 0.37);
+    }
+  }
+
+.person-card-option.display-none{
+ display: none;
+}
+
+
+
+
+
+.person-card-option a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    /* border: 1px solid black; */
+    letter-spacing: 2px;
+    width: 80%;
+    /* color: rgb(152, 152, 152); */
+color: rgb(113, 110, 110);
+    /* background: rgb(159, 159, 159); */
+    padding: 10px 0;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701) ; */
+    border-radius: 10px;
+}
+
+.person-card-option a:focus,.person-card-option a:active {
+    text-decoration: none;
+    color: rgb(113, 110, 110);
+}
+
+.person-card-option .deletebtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid brown;
+    width: 80%;
+    border-radius: 10px;
+    /* padding: 10px 0; */
+    color: white;
+    color: brown;
+    /* background: rgb(233, 62, 0); */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701); */
+    /* letter-spacing: 2px; */
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.deletebtn button {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+    font-family: "Poppins", sans-serif;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: brown;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.deletebtn button:hover {
+    color: white !important;
+    cursor: pointer;
+
+}
+
+.person-card-option .deletebtn:hover {
+    background: brown !important;
+    color: white !important;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.701);
+cursor: pointer;
+}
+
+.bx-x {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+    color: rgb(113, 110, 110);
+}
+
+.bx-dots-vertical-rounded {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media all and (max-width: 800px) {
+
+    main {
+        margin-top: 40px;
+        flex-direction: column;
+    height: fit-content;
+
+    }
+    .post-image-section{
+        width: 100%;
+    }
+    .post-info {
+        width: 100%;
+        min-height: 500px;
+    }
 }
