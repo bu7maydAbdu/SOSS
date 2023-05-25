@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HayaFooty</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+
+      
+      href="/imgs/favicon-32x32.png"
+    />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/add-lost.css" />
+    <link rel="stylesheet" href="/css/accountDataUpload.css" />
+    <!-- <link rel="stylesheet" href="/css/updateAccountData.css" /> -->
+  </head>
+  <body>
+<header>
+    <h1>SOSS</h1>
+
+    <% if(userData === "false" && accountData === "false"){ %>
+      
+      <a href="/login">
+        <button>Login</button>
+      </a>
+      
+      <% } else{ %>
+        <a href="/profile/myProfile/<%= userData._id %>" class="myprofile-forward">
+          <section class="small-profile-pic">
+            <img src="<%= accountData.profilePic %>" alt="">
+          </section>
+          <!-- <a href="/profile">
+            <%= userData.userName %>
+         </a> -->
+        </a>
+        <% } %>
+</header>
+
+<h3>update Your Account Data</h3>
+
+
+<main>
+    <form action="/profile/updateAccountData/<%= userData._id %>" enctype="multipart/form-data" method="POST">
+  
+    <section class="upload">
+      <img id="chosenppic" src="<%= accountData.profilePic %>" width="100" height="100" alt="">
+      <section class="round">
+        <input type="file" class="form-control" id="imageUpload" name="file" >
+        <i class="fa fa-camera" style="color: #fff;"></i>
+      </section>
+    </section>
+    <label for="bio"><span>Your Bio:</span> <span>:سيرتك الذاتية</span> </label>
+    <textarea name="bio" id="bio" placeholder="Write Your Bio Here ..."><%= accountData.bio %></textarea>
+    <label for="profession"> <span>Profession:</span> <span>:المهنة </span></label>
+    <input name="profession"  id="profession" type="text" placeholder="profession" value="<%= accountData.profession %>">
+    <h3>Social Contacts</h3>
+    <label for="twitter"><span><i class='bx bxl-twitter' ></i>Twitter:</span>   <span>:تويتر</span></label>
+    <input  type="text" name="twitter" id="twitter" value="<%= accountData.twitter %>">
+    <label for="facebook"><span><i class='bx bxl-facebook-square'></i>Facebook</span><span>:فيسبوك</span></label>
+    <input type="text" name="facebook" id="facecbook" value="<%= accountData.facebook %>">
+    <label for="phonenumber"><span><i class='bx bx-phone' ></i>Phone Number:</span><span>:رقم الهاتف</span></label>
+    <input type="text" name="phonenumber" id="phonenumber" value="<%= accountData.phoneNumber %>">
+  
+    <!-- <label class="form-control" for="arabic">
+      <input type="radio" name="arabic" id="arabic">
+      Arabic
+    </label>
+    
+    <label class="form-control" for="english">
+    <input type="radio" name="english" id="english">
+      English
+    </label> -->
+  
+   <button>Update</button>
+  
+  </form>
+  </main>
+
+<%- include('partials/footer') -%>

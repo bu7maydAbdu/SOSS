@@ -10,5 +10,11 @@ router.post(
   profileController.addAccountData
 );
 router.get("/myProfile/:id", ensureAuth, profileController.getMyProfile);
+router.get("/settings/:id", profileController.getEditProfileData);
+router.post(
+  "/updateAccountData/:id",
+  upload.single("file"),
+  profileController.updateAccountData
+);
 
 module.exports = router;

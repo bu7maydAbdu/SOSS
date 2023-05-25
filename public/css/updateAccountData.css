@@ -1,0 +1,51 @@
+*, *::before , *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+body {
+    text-align: center;
+}
+
+body h3 {
+    margin-top: 50px;
+    color: grey;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    /* border:  1px solid  brown; */
+    width: fit-content;
+    margin: 0 auto;
+}
+
+form textarea {
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid brown;
+    transition: .5s ease;
+}
+
+
+form input {
+    width: 800px;
+    height: 40px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid brown;
+}
+
+form button {
+  width: 100px;
+  margin: 0 auto;
+  height: 40px;
+  border-radius: 5px;
+  background: brown;
+  color: white;
+  border: none;
+}

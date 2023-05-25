@@ -62,4 +62,44 @@ module.exports = {
       console.log(err);
     }
   },
+  getEditProfileData: async (req, res) => {
+    try {
+      const accountData = await ProfileData.findOne({ user: req.params.id });
+      const myProfileData = await User.findOne({ _id: req.user.id });
+      console.log(accountData);
+      res.render("accountDataSettings.ejs", {
+        userData: req.user,
+        accountData: accountData,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  updateAccountData: async (req, res) => {
+    try {
+      console.log(req.file);
+      console.log(req.body);
+      // const filter = { _id: req.params._id };
+      const filter = { user: req.user._id };
+
+      const update = {
+        bio: req.body.bio,
+        profession: req.body.profession,
+        twitter: req.body.twitter,
+        facebook: req.body.facebook,
+        phoneNumber: req.body.phonenumber,
+        profilePic:
+          "https://res.cloudinary.com/moabdu/image/upload/v1683816402/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV_qhqqn1.jpg",
+        user: req.user._id,
+      };
+
+      await ProfileData.findOneAndUpdate(filter, update, {
+        new: true,
+        upsert: true,
+        // Return the raw result from the MongoDB driver
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
