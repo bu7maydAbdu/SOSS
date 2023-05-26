@@ -97,6 +97,11 @@ module.exports = {
           cloudinaryId: result.public_id,
           user: req.user._id,
         };
+        await ProfileData.findOneAndUpdate(filter, update, {
+          new: true,
+          upsert: true,
+          // Return the raw result from the MongoDB driver
+        });
       } else {
         const update = {
           bio: req.body.bio,
@@ -107,13 +112,14 @@ module.exports = {
           profilePic: profileDataPulled.profilePic,
           user: req.user._id,
         };
+        await ProfileData.findOneAndUpdate(filter, update, {
+          new: true,
+          upsert: true,
+          // Return the raw result from the MongoDB driver
+        });
       }
 
-      await ProfileData.findOneAndUpdate(filter, update, {
-        new: true,
-        upsert: true,
-        // Return the raw result from the MongoDB driver
-      });
+      res.redirect(`/profile/myProfile/${req.user._id}`);
     } catch (err) {
       console.log(err);
     }
