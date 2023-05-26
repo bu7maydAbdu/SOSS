@@ -80,6 +80,9 @@ module.exports = {
       console.log(req.file);
       console.log(req.body);
       // const filter = { _id: req.params._id };
+      const profileDataPulled = await ProfileData.findOne({
+        user: req.user._id,
+      });
       const filter = { user: req.user._id };
       if (req.file) {
         const result = await cloudinary.uploader.upload(req.file.path);
@@ -101,8 +104,7 @@ module.exports = {
           twitter: req.body.twitter,
           facebook: req.body.facebook,
           phoneNumber: req.body.phonenumber,
-          profilePic:
-            "https://res.cloudinary.com/moabdu/image/upload/v1683816402/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV_qhqqn1.jpg",
+          profilePic: profileDataPulled.profilePic,
           user: req.user._id,
         };
       }
