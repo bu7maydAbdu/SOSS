@@ -79,6 +79,7 @@
   <section class="profile-main">
 
     <section class="posts">
+      <% if(myProfileLostPost.length){ %>
       <section class="posts-scroller">
       <% for(let i = 0 ; i < myProfileLostPost.length ; i++){ %>
 
@@ -113,6 +114,10 @@
   
       <% } %>
     </section>
+    
+    <%  }  else{%>
+            <h6 style="text-align: center; color: grey;">no losts posts </h6>
+      <% } %>
   </section>
 <!-- <hr> -->
   </section>
